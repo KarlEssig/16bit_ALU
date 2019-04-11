@@ -7,7 +7,7 @@ module full_adder(input a,b,cin, output cout, s);
   wire wire1, wire2, wire3;
    half_adder H1(a,b,wire1,wire2);
    half_adder H2(wire2, cin, wire3, sum);
-   assign cout = wire 1 | wire3;
+   assign cout = wire1 | wire3;
  endmodule
  
  module full_adder4(input [3:0] a,b, input cin, output cout, output [3:0] s);
