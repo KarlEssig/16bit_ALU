@@ -8,7 +8,7 @@ endmodule
 module full_addersub(input a,b,cin,enable, output cout, s);
   wire wire1, wire2, wire3;
    half_addersub H1(a,b,enable,wire1,wire2);
-   half_addersub H2(wire2, cin, enable, wire3, sum);
+  half_addersub H2(wire2, cin, enable, wire3, s);
    assign cout = wire1 | wire3;
  endmodule
  
