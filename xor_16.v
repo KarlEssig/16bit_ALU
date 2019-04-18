@@ -1,4 +1,4 @@
-module Or_16(input [15:0] a, b, output [15:0] s);
+module Xor_16(input [15:0] a, b, output [15:0] s);
 	assign s[0] = a[0] ^ b[0];
 	assign s[1] = a[1] ^ b[1];
 	assign s[2] = a[2] ^ b[2];
