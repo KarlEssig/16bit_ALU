@@ -16,3 +16,26 @@ module And_16(input [15:0] a,b, output [15:0] s);
   assign s[14] = a[14] & b[14];
   assign s[15] = a[15] & b[15];
 endmodule
+
+module testbench();
+
+  //Testing And_16
+  
+  reg [15:0] a, b;
+  wire [15:0] s;
+
+  And_16 simpleAnd(a, b, s);
+
+  initial begin 
+    a = 0; b = 0; 
+    #250  a=16'b0000010001110101;b=16'b0101100101110110;
+    #250  a=16'b0111010001110101;b=16'b0101100110010110;
+    #250  a=16'b1111010001110101;b=16'b1101100110010110;
+  end
+
+  initial begin
+    $display("        A                          B                        AND    ");
+    $monitor(" %b          %b          %b         ", a, b, s);
+  end
+
+endmodule
